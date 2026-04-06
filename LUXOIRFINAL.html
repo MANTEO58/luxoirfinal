@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxoir Prepfood</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #000;
+    overflow-x: hidden;
+}
+
+/* NAV */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 60px;
+    position: fixed;
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    background: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1920') center/cover no-repeat;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.65);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 700px;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    margin: 0;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 14px 30px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+/* SECTION */
+.section {
+    padding: 120px 80px;
+}
+
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+/* MEALS */
+.meals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.meal {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: white;
+}
+
+.meal img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.meal-content {
+    padding: 20px;
+}
+
+/* FOOD ATTENTION EFFECT */
+.meal:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 120, 0, 0.2);
+}
+
+/* TEXT */
+.text-block {
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+.contact {
+    font-size: 18px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PARALLAX */
+.parallax {
+    background-attachment: fixed;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Luxoir</div>
+    <nav>
+        <a href="#collection">Collection</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero parallax">
+    <div class="hero-content">
+        <h1>Discipline Meets Luxury Nutrition</h1>
+        <p>Designed for professionals who demand excellence in every aspect of life — including what they eat.</p>
+        <a href="#collection" class="btn">Explore Collection</a>
+    </div>
+</section>
+
+<section id="collection" class="section reveal">
+    <h2>Signature Collection</h2>
+    <div class="meals">
+
+        <div class="meal">
+            <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+            <div class="meal-content">
+                <h4>Executive Chicken Plate</h4>
+                <p>Precision nutrition for peak output.</p>
+            </div>
+        </div>
+
+        <div class="meal">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+            <div class="meal-content">
+                <h4>Atlantic Salmon Selection</h4>
+                <p>Clean energy, refined taste.</p>
+            </div>
+        </div>
+
+        <div class="meal">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+            <div class="meal-content">
+                <h4>Plant Elite Bowl</h4>
+                <p>Focused, plant-based performance.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="philosophy" class="section reveal">
+    <h2>Philosophy</h2>
+    <div class="text-block">
+        <p>High performance starts with what you consume daily.</p>
+        <p>Luxoir removes friction from your routine — so you can focus on execution, not decisions.</p>
+        <p>This is not convenience. This is optimization.</p>
+    </div>
+</section>
+
+<section id="delivery" class="section reveal">
+    <h2>Delivery</h2>
+    <div class="text-block">
+        <p>Reliable, precise delivery across the Netherlands.</p>
+    </div>
+</section>
+
+<section id="contact" class="section reveal">
+    <h2>Contact</h2>
+    <div class="contact">
+        <p>+31 6 1234 5678</p>
+        <p>contact@luxoirprep.com</p>
+    </div>
+</section>
+
+<script>
+window.addEventListener('scroll', function() {
+    let reveals = document.querySelectorAll('.reveal');
+
+    for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add('active');
+        }
+    }
+});
+</script>
+
+</body>
+</html>
